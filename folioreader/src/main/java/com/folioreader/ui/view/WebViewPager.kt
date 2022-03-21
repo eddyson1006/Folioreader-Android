@@ -19,6 +19,7 @@ class WebViewPager : ViewPager {
     }
 
     internal var horizontalPageCount: Int = 0
+    var pageCount: Int = 0
     private var folioWebView: FolioWebView? = null
     private var takeOverScrolling: Boolean = false
     var isScrolling: Boolean = false
@@ -68,6 +69,7 @@ class WebViewPager : ViewPager {
             }
 
             override fun onPageSelected(position: Int) {
+                pageCount = position
                 Log.v(LOG_TAG, "-> onPageSelected -> $position")
             }
 

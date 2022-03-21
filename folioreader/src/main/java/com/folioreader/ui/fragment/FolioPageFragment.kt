@@ -398,7 +398,7 @@ class FolioPageFragment : Fragment(),
             override fun onScrollChange(percent: Int) {
                 setIndicatorVisibility()
                 mScrollSeekbar!!.setProgressAndThumb(percent)
-                updatePagesLeftText(percent)
+                updatePagesLeftText(percent, webViewPager!!.pageCount)
             }
         })
 
@@ -700,7 +700,7 @@ class FolioPageFragment : Fragment(),
         }
     }
 
-    private fun updatePagesLeftText(scrollY: Int) {
+    private fun updatePagesLeftText(scrollY: Int, horizontalPageCount: Int) {
         try {
             val currentPage = (ceil(scrollY.toDouble() / mWebview!!.webViewHeight) + 1).toInt()
             val totalPages =
@@ -712,7 +712,7 @@ class FolioPageFragment : Fragment(),
                 getString(R.string.page_left)
             val pagesRemainingStr = String.format(
                 Locale.US,
-                pagesRemainingStrFormat, pagesRemaining
+                pagesRemainingStrFormat, horizontalPageCount
             )
 
             val minutesRemaining =
