@@ -158,6 +158,7 @@ class SearchAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> {
         val textViewCount: TextView = itemView.findViewById(R.id.textViewCount)
         val textViewTitle: TextView = itemView.findViewById(R.id.textViewTitle)
         val textViewResult: TextView = itemView.findViewById(R.id.textViewResult)
+        val textViewPage: TextView = itemView.findViewById(R.id.textViewPage)
         lateinit var searchLocator: SearchLocator
 
         init {
@@ -177,6 +178,7 @@ class SearchAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> {
                         R.plurals.numberOfSearchResults, count, count
                     )
                     textViewCount.visibility = View.VISIBLE
+                    textViewPage.visibility = View.GONE
                     textViewTitle.visibility = View.GONE
                     textViewResult.visibility = View.GONE
 
@@ -186,6 +188,7 @@ class SearchAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> {
                 SearchItemType.RESOURCE_TITLE_ITEM -> {
                     textViewTitle.text = searchLocator.primaryContents
                     textViewTitle.visibility = View.VISIBLE
+                    textViewPage.visibility = View.GONE
                     textViewCount.visibility = View.GONE
                     textViewResult.visibility = View.GONE
 
@@ -204,8 +207,11 @@ class SearchAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> {
                     spannableString.setSpan(StyleSpan(Typeface.BOLD), from, to, 0)
                     spannableString.setSpan(UnderlineSpan(), from, to, 0)
                     textViewResult.text = spannableString
+                    textViewPage.text = searchLocator.locations.position.toString()
+
 
                     textViewResult.visibility = View.VISIBLE
+                    textViewPage.visibility = View.VISIBLE
                     textViewCount.visibility = View.GONE
                     textViewTitle.visibility = View.GONE
 
