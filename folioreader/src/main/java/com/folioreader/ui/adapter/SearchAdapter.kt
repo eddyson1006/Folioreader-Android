@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.folioreader.R
 import com.folioreader.model.locators.SearchItemType
 import com.folioreader.model.locators.SearchLocator
+import com.folioreader.viewmodels.SearchViewModel
 
 class SearchAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
@@ -209,6 +210,7 @@ class SearchAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> {
                     textViewResult.text = spannableString
                     textViewPage.text = searchLocator.locations.position.toString()
 
+                    Log.v(SearchViewModel.LOG_TAG, "-> text view page ${textViewPage.text}")
 
                     textViewResult.visibility = View.VISIBLE
                     textViewPage.visibility = View.VISIBLE
