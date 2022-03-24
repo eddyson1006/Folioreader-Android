@@ -208,9 +208,9 @@ class SearchAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> {
                     spannableString.setSpan(StyleSpan(Typeface.BOLD), from, to, 0)
                     spannableString.setSpan(UnderlineSpan(), from, to, 0)
                     textViewResult.text = spannableString
-                    textViewPage.text = searchLocator.locations.position.toString()
+                    textViewPage.text = searchLocator.locations.progression.toString()
 
-                    Log.v(SearchViewModel.LOG_TAG, "-> text view page ${textViewPage.text}")
+                    Log.v(SearchViewModel.LOG_TAG, "-> page progression ${searchLocator.locations.progression}")
 
                     textViewResult.visibility = View.VISIBLE
                     textViewPage.visibility = View.VISIBLE
