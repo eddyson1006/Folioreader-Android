@@ -210,10 +210,10 @@ class SearchAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> {
                     textViewResult.text = spannableString
                     textViewPage.text = searchLocator.locations.progression.toString()
 
-                    Log.v(SearchViewModel.LOG_TAG, "-> page progression ${searchLocator.locations.progression}")
+                    Log.v(SearchViewModel.LOG_TAG, "-> page progression ${searchLocator.locations}")
 
                     textViewResult.visibility = View.VISIBLE
-                    textViewPage.visibility = View.VISIBLE
+                    textViewPage.visibility = View.GONE
                     textViewCount.visibility = View.GONE
                     textViewTitle.visibility = View.GONE
 
