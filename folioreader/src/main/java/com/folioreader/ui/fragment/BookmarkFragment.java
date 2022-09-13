@@ -38,7 +38,7 @@ public class BookmarkFragment extends Fragment implements BookmarkAdapter.Bookma
         BookmarkFragment bookmarkFragment = new BookmarkFragment();
         Bundle args = new Bundle();
         args.putString(FolioReader.EXTRA_BOOK_ID, bookId);
-        args.putString(Constants.BOOK_TITLE, epubTitle);
+        args.putString(Constants.BOOK_TITLE, "");
         bookmarkFragment.setArguments(args);
         return bookmarkFragment;
     }
