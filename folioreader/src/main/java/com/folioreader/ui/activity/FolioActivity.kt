@@ -520,7 +520,7 @@ class FolioActivity : AppCompatActivity(), FolioActivityCallback, MediaControlle
         }
 
         intent.putExtra(FolioReader.EXTRA_BOOK_ID, mBookId)
-        intent.putExtra(Constants.BOOK_TITLE, bookFileName)
+        intent.putExtra(Constants.BOOK_TITLE, "")
 
         startActivityForResult(intent, RequestCode.CONTENT_HIGHLIGHT.value)
         overridePendingTransition(R.anim.slide_in_left, R.anim.disappear)
