@@ -81,7 +81,7 @@ class FolioPageFragment : Fragment(),
             val fragment = FolioPageFragment()
             val args = Bundle()
             args.putInt(BUNDLE_SPINE_INDEX, spineIndex)
-            args.putString(BUNDLE_BOOK_TITLE, bookTitle)
+            args.putString(BUNDLE_BOOK_TITLE, "")
             args.putString(FolioReader.EXTRA_BOOK_ID, bookId)
             args.putSerializable(BUNDLE_SPINE_ITEM, spineRef)
             fragment.arguments = args
